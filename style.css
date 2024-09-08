@@ -4,9 +4,11 @@
     grid-template-rows: 200px 225px 225px 225px; 
     grid-template-columns: repeat(3, 1fr) 350px ;
     position: relative;
+    margin: auto;
 }
-.collage > * {
+.collage > {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 .top {
@@ -26,7 +28,8 @@
     position:absolute;
     right: -125px ;
     left: 0;
-    top: 400px ;
+    top: 400px;
+    height: 300px;
 }
 .sideBox3 {
     position: absolute;
@@ -54,7 +57,7 @@
 .sidebar {
     border: blue solid 2px;
     grid-row: 2 / -1;
-    grid-column: 4 / -1;
+    grid-column: 4 / 5;
 }
 .sidebar img {
     height: 100%;
@@ -62,6 +65,9 @@
 }
 
  @media(max-width:1024px) {
+    .collage {
+        grid: template columns 30% auto;
+    }
     .sidebar {
         display: none;
     }  
@@ -70,6 +76,10 @@
     }
 }
 @media(max-width:780px) {
+    .collage {
+        grid: template columns 120Px auto;
+        /* grid-template-areas:"top" "sideBox" "main" "sidebar" ; */
+    }
      .sidebar, .main {
         display: none;
     } 
